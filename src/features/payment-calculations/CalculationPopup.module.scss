@@ -1,0 +1,181 @@
+@use "../../variables" as *;
+@use "../../mixins" as *;
+
+.popup_container {
+  @include flex_center();
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $gray_200;
+}
+
+.popup_content {
+  position: relative;
+  width: 100%;
+  max-width: 34.5rem;
+  padding: 2rem;
+  background-color: $white;
+  border-radius: 1.875rem;
+}
+
+.close_icon {
+  position: absolute;
+  top: 1.6875rem;
+  right: 1.6875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: $primary;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-family: "Lab Grotesque 500", sans-serif;
+  line-height: 2.5rem;
+}
+
+.help_info {
+  margin-top: .375rem;
+  color: $gray_100;
+}
+
+.form {
+  margin-top: .625rem;
+}
+
+.label {
+  font-family: "Lab Grotesque 500", sans-serif;
+  font-size: .875rem;
+}
+
+.input_container {
+  position: relative;
+  margin-top: .5rem;
+}
+
+.amount_input {
+  width: 100%;
+  padding: .5rem .625rem;
+  font-family: "Lab Grotesque 400", sans-serif;
+  font-size: .875rem;
+  color: $black;
+  border: 1px solid $blue_gray_200;
+  border-radius: .1875rem;
+  line-height: 1.5rem;
+  transition: border $standard_transition;
+
+  &::placeholder {
+    color: $blue_gray_100;
+  }
+
+  &:hover {
+    border: 1px solid $black;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.currency_label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.submit_button {
+  @include reset_button_defaults();
+
+  margin-top: .5rem;
+  font-size: .875rem;
+  color: $primary;
+}
+
+.months_selector_container {
+  @include flex_align_center();
+
+  margin-top: 1.0625rem;
+
+  .label {
+    margin-right: 2.1875rem;
+  }
+}
+
+.options {
+  @include flex_align_center();
+}
+
+.option {
+  padding: .375rem .75rem;
+  font-size: .875rem;
+  border-radius: 3.125rem;
+  background-color: $blue_gray_300;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+}
+
+.current_option {
+  background: $main_gradient;
+  color: $white;
+}
+
+.total_container {
+  margin-top: 1.125rem;
+
+  .options {
+    margin-top: .6875rem;
+  }
+}
+
+.payment_amount {
+  margin-top: 1.9375rem;
+  font-size: 1.5rem;
+}
+
+.add_button {
+  @include button();
+
+  position: relative;
+  width: 100%;
+  margin-top: 3.0625rem;
+  padding: 1rem;
+  font-family: "Lab Grotesque 500", sans-serif;
+  background: $main_gradient;
+  box-shadow: 0 0 1.5rem rgba($primary, .33);
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity $standard-transition;
+  }
+
+  &::before {
+    background: $main_gradient;
+    opacity: 1;
+  }
+
+  &::after {
+    background: linear-gradient(45deg, $primary, $primary);
+    opacity: 0;
+  }
+
+  &:hover::before {
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}

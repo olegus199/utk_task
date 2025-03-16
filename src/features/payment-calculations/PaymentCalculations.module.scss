@@ -1,1 +1,23 @@
 @use "../../variables" as *;
+@use "../../mixins" as *;
+
+.main_section {
+  @include flex_center();
+
+  background: $main_gradient;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.calc_button {
+  @include button();
+  padding: 1rem 2rem;
+  border: 1px solid $white;
+  filter: drop-shadow(0 0 2.75rem $supporting_light_blue);
+
+  &:hover {
+    background-color: $white;
+    color: $black;
+    filter: drop-shadow(0 0 2.75rem rgba($supporting_light_blue, .25));
+  }
+}
