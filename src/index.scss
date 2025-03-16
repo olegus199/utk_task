@@ -1,0 +1,20 @@
+@use "./variables" as *;
+
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("./fonts/LabGrotesque-Medium.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lab Grotesque", sans-serif;
+  background-color: $white;
+  color: $black;
+  font-synthesis: none !important;
+  -webkit-font-smoothing: antialiased;
+}

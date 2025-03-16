@@ -1,0 +1,10 @@
+@mixin reset_button_defaults() {
+  display: block;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
