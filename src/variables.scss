@@ -1,11 +1,19 @@
 $black: #000;
 $white: #fff;
 $gray_100: #808080;
-$gray_200: #bec5cc;
-$gray_300: #dfe3e6;
-$gray_400: #eef0f2;
+$gray_200: #b2b2b2;
+
+$blue_gray_100: #bec5cc;
+$blue_gray_200: #dfe3e6;
+$blue_gray_300: #eef0f2;
 
 $primary: #ea0029;
 
 $supporting_100: #dc3131;
 $supporting_200: #ff5e56;
+
+$supporting_light_blue: #cfdae7;
+
+$standard_transition: .15s ease-out;
+
+$main_gradient: linear-gradient(45deg, $supporting_200, $supporting_100);
