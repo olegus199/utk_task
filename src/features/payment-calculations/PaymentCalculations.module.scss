@@ -11,7 +11,7 @@
 
 .calc_button {
   @include button();
-  padding: 1rem 2rem;
+  padding: 1em 2em;
   border: 1px solid $white;
   filter: drop-shadow(0 0 2.75rem $supporting_light_blue);
 
@@ -19,5 +19,12 @@
     background-color: $white;
     color: $black;
     filter: drop-shadow(0 0 2.75rem rgba($supporting_light_blue, .25));
+  }
+}
+
+@media (max-width: 470px) {
+  .calc_button {
+    font-size: .75rem;
+    line-height: 1rem;
   }
 }

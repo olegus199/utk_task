@@ -9,6 +9,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
+  padding: 1rem;
   background-color: $gray_200;
 }
 
@@ -40,6 +41,7 @@
 
 .help_info {
   margin-top: .375rem;
+  font-size: .875rem;
   color: $gray_100;
 }
 
@@ -146,7 +148,7 @@
   position: relative;
   width: 100%;
   margin-top: 3.0625rem;
-  padding: 1rem;
+  padding: 1em;
   font-family: "Lab Grotesque 500", sans-serif;
   background: $main_gradient;
   box-shadow: 0 0 1.5rem rgba($primary, .33);
@@ -179,5 +181,97 @@
 
   &:hover::after {
     opacity: 1;
+  }
+}
+
+@media (max-height: 520px) {
+  .popup_container {
+    display: block;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .popup_content {
+    max-width: 28.3125rem;
+  }
+
+  .close_icon {
+    right: 1.4375rem;
+  }
+
+  .total_container {
+    .options {
+      margin-top: 1.0625rem
+    }
+  }
+
+  .payment_amount {
+    margin-top: 1.625rem
+  }
+}
+
+@media (max-width: 470px) {
+  .popup_container {
+    display: block;
+    padding: 0;
+  }
+
+  .popup_content {
+    max-width: 100%;
+    height: 100%;
+    padding: 2rem 1rem;
+    border-radius: 0;
+  }
+
+  .close_icon {
+    top: 1.375rem;
+    right: 1.375rem;
+    width: .75rem;
+    height: .75rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+  }
+
+  .help_info {
+    margin-top: 1rem;
+    font-size: .75rem;
+    line-height: 1rem;
+  }
+
+  .form {
+    margin-top: .5rem;
+  }
+
+  .months_selector_container {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 1.5rem;
+
+    .label {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .total_container {
+    margin-top: 1rem;
+
+    .options {
+      margin-top: 1rem;
+    }
+  }
+
+  .payment_amount {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .add_button {
+    margin-top: 2.375rem;
+    font-size: .75rem;
+    line-height: 1rem;
   }
 }

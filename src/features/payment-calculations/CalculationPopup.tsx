@@ -18,7 +18,6 @@ const textWidthOffset = 20;
 const CalculationPopup: FC<CalculationPopupProps> = ({ handleClose }) => {
   const [inputAmount, setInputAmount] = useState("");
   const [textWidth, setTextWidth] = useState(0);
-  console.log(textWidth);
 
   const [creditAmount, setCreditAmount] = useState("");
 
