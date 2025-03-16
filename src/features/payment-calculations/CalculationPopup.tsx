@@ -13,10 +13,12 @@ function formatNumber(number: number): string {
 
 const monthsAmount = [12, 24, 36, 48];
 const paymentPeriod = ["в год", "в месяц"];
+const textWidthOffset = 20;
 
 const CalculationPopup: FC<CalculationPopupProps> = ({ handleClose }) => {
   const [inputAmount, setInputAmount] = useState("");
   const [textWidth, setTextWidth] = useState(0);
+  console.log(textWidth);
 
   const [creditAmount, setCreditAmount] = useState("");
 
@@ -29,8 +31,9 @@ const CalculationPopup: FC<CalculationPopupProps> = ({ handleClose }) => {
   const [submitState, formAction] = useActionState<undefined>(submitAction, undefined);
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>): void {
-    // Reset credit amount
+    // Reset data
     setCreditAmount("");
+    setCurrentPaymentPeriodIdx(1);
 
     // Main logic
     const { value } = e.target;
@@ -47,7 +50,8 @@ const CalculationPopup: FC<CalculationPopupProps> = ({ handleClose }) => {
       tempSpan.textContent = formattedVal;
       document.body.appendChild(tempSpan);
 
-      setTextWidth(tempSpan.offsetWidth);
+      const inputWidth = inputRef.current.getBoundingClientRect().width;
+      setTextWidth(Math.min(tempSpan.offsetWidth + textWidthOffset, inputWidth - textWidthOffset));
       document.body.removeChild(tempSpan);
     }
   }
@@ -131,7 +135,7 @@ const CalculationPopup: FC<CalculationPopupProps> = ({ handleClose }) => {
             />
             {inputAmount && (
               <p
-                style={{ left: `${textWidth + 20}px` }}
+                style={{ left: `${textWidth}px` }}
                 className={styles.currency_label}
               >₽
               </p>

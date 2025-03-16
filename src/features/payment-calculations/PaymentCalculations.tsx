@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import CalculationPopup from "./CalculationPopup.tsx";
 
 const PaymentCalculations: FC = () => {
-  const [popupVisible, setPopupVisible] = useState(true);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   function handlePopupClose(): void {
     setPopupVisible(false);
